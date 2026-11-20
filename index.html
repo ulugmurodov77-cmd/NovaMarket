@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>NovaMarket — Onlayn market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container top-inner">
+    <span><i class="fa-solid fa-location-dot"></i> Toshkent</span>
+    <span><i class="fa-solid fa-headset"></i> 24/7 qo‘llab-quvvatlash</span>
+    <div class="top-right">
+      <button id="loginOpen">Kirish</button>
+      <button id="registerOpen">Ro‘yxatdan o‘tish</button>
+      <span>🇺🇿 UZ</span>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header-main">
+    <a href="#" class="logo">
+      <span class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+      <span>Nova<span>Market</span><small>Yaxshi narx · Sifat kafolati</small></span>
+    </a>
+
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="searchInput" placeholder="Mahsulot qidiring...">
+      <button id="searchBtn">Qidirish</button>
+    </div>
+
+    <div class="header-actions">
+      <button class="action" id="favoritesOpen">
+        <i class="fa-regular fa-heart"></i>
+        <span>Sevimlilar</span><b id="favCount">0</b>
+      </button>
+      <button class="action" id="cartOpen">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Savatcha</span><b id="cartCount">0</b>
+      </button>
+      <button class="action" id="ordersOpen">
+        <i class="fa-solid fa-box"></i>
+        <span>Buyurtmalar</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-layout">
+    <aside class="categories">
+      <h3><i class="fa-solid fa-bars"></i> Kategoriyalar</h3>
+      <button class="category active" data-category="Barchasi"><i class="fa-solid fa-border-all"></i> Barchasi</button>
+      <button class="category" data-category="Elektronika"><i class="fa-solid fa-mobile-screen"></i> Elektronika</button>
+      <button class="category" data-category="Kiyim"><i class="fa-solid fa-shirt"></i> Kiyim-kechak</button>
+      <button class="category" data-category="Oyoq kiyim"><i class="fa-solid fa-shoe-prints"></i> Oyoq kiyimlar</button>
+      <button class="category" data-category="Uy jihozlari"><i class="fa-solid fa-couch"></i> Uy jihozlari</button>
+      <button class="category" data-category="Go‘zallik"><i class="fa-solid fa-spa"></i> Go‘zallik</button>
+      <button class="category" data-category="Sport"><i class="fa-solid fa-dumbbell"></i> Sport</button>
+      <button class="category" data-category="Aksessuar"><i class="fa-solid fa-glasses"></i> Aksessuarlar</button>
+    </aside>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">NOVAMARKET AKSIYASI</span>
+        <h1>Yangi xaridlar,<br><span>yangi imkoniyatlar!</span></h1>
+        <p>Sevimli mahsulotlaringizni eng qulay narxlarda xarid qiling.</p>
+        <button id="heroShop">Xarid qilish <i class="fa-solid fa-arrow-right"></i></button>
+        <div class="hero-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700" alt="Smartfon">
+      </div>
+    </section>
+  </section>
+
+  <section class="benefits">
+    <div><i class="fa-solid fa-truck-fast"></i><span><b>Tez yetkazib berish</b><small>Qulay va tez xizmat</small></span></div>
+    <div><i class="fa-solid fa-shield-halved"></i><span><b>Xavfsiz xarid</b><small>Ishonchli savdo</small></span></div>
+    <div><i class="fa-solid fa-headset"></i><span><b>24/7 yordam</b><small>Doimo siz bilan</small></span></div>
+    <div><i class="fa-solid fa-gift"></i><span><b>Ajoyib chegirmalar</b><small>Har kuni aksiyalar</small></span></div>
+  </section>
+
+  <section class="products-section" id="productsSection">
+    <div class="section-heading">
+      <div><span class="section-label">BIZNING TANLOV</span><h2 id="productsTitle">Mashhur mahsulotlar</h2></div>
+      <select id="sortSelect">
+        <option value="popular">Ommabop</option>
+        <option value="cheap">Arzonidan</option>
+        <option value="expensive">Qimmatidan</option>
+      </select>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <section class="promo">
+    <div>
+      <span>MAXSUS TAKLIF</span>
+      <h2>NovaMarket bilan<br>xarid qilish yanada oson!</h2>
+      <p>Sevimli mahsulotlaringiz sizni kutmoqda.</p>
+      <button id="promoShop">Mahsulotlarni ko‘rish</button>
+    </div>
+    <i class="fa-solid fa-bag-shopping"></i>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Nova<span>Market</span></div>
+    <p>© 2026 NovaMarket. Barcha huquqlar himoyalangan.</p>
+    <div class="footer-payments">
+      <span>VISA</span><span>Mastercard</span><span>HUMO</span><span>UZCARD</span>
+    </div>
+  </footer>
+</main>
+
+<!-- Umumiy yon panel -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h2 id="drawerTitle">Savatcha</h2>
+    <button id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div id="drawerContent"></div>
+</aside>
+
+<!-- Mahsulot modal -->
+<div class="modal" id="productModal">
+  <div class="modal-card">
+    <button class="modal-close" data-close="productModal">×</button>
+    <div id="productDetails"></div>
+  </div>
+</div>
+
+<!-- Kirish modal -->
+<div class="modal" id="authModal">
+  <div class="modal-card auth-card">
+    <button class="modal-close" data-close="authModal">×</button>
+    <div class="auth-logo">Nova<span>Market</span></div>
+    <h2 id="authTitle">Hisobga kirish</h2>
+    <p>NovaMarket hisobingizga xush kelibsiz!</p>
+    <form id="authForm">
+      <input id="authName" placeholder="Ismingiz" hidden>
+      <input id="authPhone" placeholder="Telefon raqamingiz" required>
+      <input id="authPassword" type="password" placeholder="Parol" required>
+      <button class="primary-btn" type="submit">Davom etish</button>
+    </form>
+    <p id="authSwitch">Hisobingiz yo‘qmi? <a href="#" id="switchAuth">Ro‘yxatdan o‘tish</a></p>
+  </div>
+</div>
+
+<!-- Buyurtma modal -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-card checkout-card">
+    <button class="modal-close" data-close="checkoutModal">×</button>
+    <h2>Buyurtmani rasmiylashtirish</h2>
+    <form id="checkoutForm">
+      <label>Ismingiz</label>
+      <input id="customerName" required placeholder="Ismingiz">
+      <label>Telefon raqamingiz</label>
+      <input id="customerPhone" required placeholder="+998 90 123 45 67">
+      <label>Yetkazib berish turi</label>
+      <select id="deliveryType">
+        <option value="Yetkazib berish">Uyga yetkazib berish</option>
+        <option value="Olib ketish">Do‘kondan olib ketish</option>
+      </select>
+      <label>Manzil</label>
+      <input id="customerAddress" placeholder="Manzilingiz">
+      <label>To‘lov usuli</label>
+      <div class="payment-options">
+        <label class="payment-option"><input type="radio" name="payment" value="Humo" checked><span class="pay-logo humo">HUMO</span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Uzcard"><span class="pay-logo uzcard">UZCARD</span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Visa"><span class="pay-logo visa">VISA</span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Mastercard"><span class="pay-logo master">Mastercard</span></label>
+        <label class="payment-option"><input type="radio" name="payment" value="Naqd"><span>Naqd pul</span></label>
+      </div>
+      <div class="checkout-total" id="checkoutTotal"></div>
+      <button class="primary-btn" type="submit">Buyurtmani tasdiqlash</button>
+    </form>
+    <p class="secure-note">Demo rejim: karta ma'lumotlarini kiritish talab qilinmaydi. Haqiqiy to‘lov uchun bank/to‘lov provayderi integratsiyasi kerak.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
